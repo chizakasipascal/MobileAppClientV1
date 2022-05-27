@@ -3,15 +3,25 @@ import 'package:mobileappclientv1/src/const/routes.dart';
 import 'package:mobileappclientv1/src/utils/utils.dart';
 import 'package:mobileappclientv1/src/views/widgets/widgets.dart';
 
-class Register extends StatelessWidget {
-  Register({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
 
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
   final GlobalKey<FormState> _keyForm = GlobalKey();
+
   final GlobalKey<State> _keyLoader =
       GlobalKey<State>(debugLabel: "register  user");
 
   final TextEditingController _telephone = TextEditingController();
+
   final TextEditingController _password = TextEditingController();
+
+  bool value = false;
+
   @override
   Widget build(BuildContext context) {
     // final l10n = AppLocalizations.of(context);
@@ -31,6 +41,85 @@ class Register extends StatelessWidget {
               TextFieldCustomer(
                 // hint: "Prénom", //l10n!.nom,
                 label: "Prénom *",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                  child: SizedBox(
+                    height: 10,
+                    width: 10,
+                  ),
+                ),
+              ),
+              TextFieldCustomer(
+                // hint: "Prénom", //l10n!.nom,
+                label: "Nom *",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                  child: SizedBox(
+                    height: 10,
+                    width: 10,
+                  ),
+                ),
+              ),
+              TextFieldCustomer(
+                // hint: "Prénom", //l10n!.nom,
+                label: "Téléphone *",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                  child: SizedBox(
+                    height: 10,
+                    width: 10,
+                  ),
+                ),
+              ),
+              TextFieldCustomer(
+                // hint: "Prénom", //l10n!.nom,
+                label: "Email",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                  child: SizedBox(
+                    height: 10,
+                    width: 10,
+                  ),
+                ),
+              ),
+              TextFieldCustomer(
+                // hint: "Prénom", //l10n!.nom,
+                label: "30/09/1932",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                  child: SizedBox(
+                    height: 10,
+                    width: 10,
+                  ),
+                ),
+              ),
+              const Text("Sexe"),
+              TextFieldCustomer(
+                // hint: "Prénom", //l10n!.nom,
+                label: "Mot de passe *",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                  child: SizedBox(
+                    height: 10,
+                    width: 10,
+                  ),
+                ),
+              ),
+              TextFieldCustomer(
+                // hint: "Prénom", //l10n!.nom,
+                label: "Confirmation du mot de passe *",
                 textAlign: TextAlign.left,
                 prefixIcon: const Padding(
                   padding: EdgeInsets.only(
