@@ -3,8 +3,9 @@ import 'package:mobileappclientv1/src/const/app_theme.dart';
 import 'package:mobileappclientv1/src/const/assets.dart';
 import 'package:mobileappclientv1/src/const/routes.dart';
 import 'package:mobileappclientv1/src/utils/utils.dart';
+import 'package:mobileappclientv1/src/views/screens/espaceClient/espaceClient.dart';
 import 'package:mobileappclientv1/src/views/screens/historique/historique.dart';
-import 'package:mobileappclientv1/src/views/screens/screens.dart';
+
 import 'package:mobileappclientv1/src/views/screens/telephone/telephone.dart';
 import 'package:mobileappclientv1/src/views/widgets/background.dart';
 
@@ -126,7 +127,7 @@ class _PageState extends State<PageNav> {
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(),
             children: <Widget>[
-              EspaceRevendeur(),
+              EspaceClient(),
               const Chat(),
               const Historique(),
               const Telephone(),

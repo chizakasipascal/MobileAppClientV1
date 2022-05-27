@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mobileappclientv1/src/const/routes.dart';
 import 'package:mobileappclientv1/src/views/screens/screens.dart';
 
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -38,7 +39,7 @@ class EspaceClientAppV1 extends StatelessWidget {
       title: Strings.appName,
       // initialRoute: Routes.initial,
       home: LoginScreen(),
-      //  routes: Routes.routes,
+      routes: Routes.routes,
     );
   }
 }
