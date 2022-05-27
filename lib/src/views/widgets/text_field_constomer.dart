@@ -13,6 +13,8 @@ class TextFieldCustomer extends StatelessWidget {
   final Validator? validator;
   final OnSaved? onSaved;
   final TextInputType inputType = TextInputType.text;
+  final TextAlignVertical textAlignVertical;
+  final TextAlign textAlign;
   final bool enable;
   bool isPassword, isEmptyOne;
   TextFieldCustomer({
@@ -27,6 +29,8 @@ class TextFieldCustomer extends StatelessWidget {
     this.isPassword = false,
     this.hint,
     this.isEmptyOne = true,
+    this.textAlignVertical = TextAlignVertical.center,
+    this.textAlign = TextAlign.center,
   }) : super(key: key);
 
   @override
@@ -42,8 +46,8 @@ class TextFieldCustomer extends StatelessWidget {
             obscureText: isPassword,
             controller: controller,
             obscuringCharacter: '*',
-            textAlignVertical: TextAlignVertical.center,
-            textAlign: TextAlign.center,
+            textAlignVertical: textAlignVertical,
+            textAlign: textAlign,
             style: themeData.textTheme.bodyText2,
             decoration: InputDecoration(
               border: InputBorder.none,

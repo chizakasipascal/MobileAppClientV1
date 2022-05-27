@@ -94,10 +94,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 10),
               ConnectisRedButtom(
                 onPressed: () {
-                  onPressed:
-                  () {
-                    Navigator.pushNamed(context, Routes.register);
-                  };
+                  Navigator.pushNamed(context, Routes.register);
                 },
                 colortextStyle: kConnectis,
                 descriprion: "S'inscrire",

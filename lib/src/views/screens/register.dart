@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobileappclientv1/src/const/assets.dart';
 import 'package:mobileappclientv1/src/const/routes.dart';
 import 'package:mobileappclientv1/src/utils/utils.dart';
 import 'package:mobileappclientv1/src/views/widgets/widgets.dart';
@@ -30,27 +29,15 @@ class Register extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFieldCustomer(
-                hint: "Nom & Prénom", //l10n!.nom,
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.only(
+                // hint: "Prénom", //l10n!.nom,
+                label: "Prénom *",
+                textAlign: TextAlign.left,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.only(
                       top: 20.0, left: 20.0, right: 15.0, bottom: 0),
                   child: SizedBox(
                     height: 10,
                     width: 10,
-                    child: Image.asset(Assets.lock),
-                  ),
-                ),
-              ),
-              TextFieldCustomer(
-                hint: "**************",
-                isPassword: true,
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                  child: SizedBox(
-                    height: 10,
-                    width: 10,
-                    child: Image.asset(Assets.key),
                   ),
                 ),
               ),
@@ -67,45 +54,6 @@ class Register extends StatelessWidget {
                       ),
                     ),
               ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    "Mot de passe oublié?",
-                    // l10n.seconnecter,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium!
-                        .copyWith(color: kGreyColor),
-                  ),
-                  Text(
-                    "Changer de compte",
-                    //l10n.changerdecompte,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium!
-                        .copyWith(color: kGreyColor),
-                  )
-                ],
-              ),
-              const SizedBox(height: 10),
-              ConnectisRedButtom(
-                onPressed: () {
-                  debugPrint("S'inscrire");
-                },
-                colortextStyle: kConnectis,
-                descriprion: "S'inscrire",
-                style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                      foregroundColor: MaterialStateProperty.all(kConnectis),
-                      elevation: MaterialStateProperty.all(0),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                      overlayColor: MaterialStateProperty.all(
-                        kConnectis.withOpacity(.5),
-                      ),
-                    ),
-              ),
             ],
           ),
         ),
@@ -113,3 +61,90 @@ class Register extends StatelessWidget {
     );
   }
 }
+
+/*
+import 'package:flutter_vpn/flutter_vpn.dart';
+import 'package:flutter_vpn/state.dart';
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _addressController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  var state = FlutterVpnState.disconnected;
+  CharonErrorState? charonState = CharonErrorState.NO_ERROR;
+
+  @override
+  void initState() {
+    FlutterVpn.prepare();
+    FlutterVpn.onStateChanged.listen((s) => setState(() => state = s));
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter VPN'),
+        ),
+        body: ListView(
+          padding: const EdgeInsets.all(12),
+          children: <Widget>[
+            Text('Current State: $state'),
+            Text('Current Charon State: $charonState'),
+            TextFormField(
+              controller: _addressController,
+              decoration: const InputDecoration(icon: Icon(Icons.map_outlined)),
+            ),
+            TextFormField(
+              controller: _usernameController,
+              decoration: const InputDecoration(
+                icon: Icon(Icons.person_outline),
+              ),
+            ),
+            TextFormField(
+              controller: _passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(icon: Icon(Icons.lock_outline)),
+            ),
+            ElevatedButton(
+              child: const Text('Connect'),
+              onPressed: () => FlutterVpn.connectIkev2EAP(
+                server: _addressController.text,
+                username: _usernameController.text,
+                password: _passwordController.text,
+              ),
+            ),
+            ElevatedButton(
+              child: const Text('Disconnect'),
+              onPressed: () => FlutterVpn.disconnect(),
+            ),
+            ElevatedButton(
+              child: const Text('Update State'),
+              onPressed: () async {
+                var newState = await FlutterVpn.currentState;
+                setState(() => state = newState);
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Update Charon State'),
+              onPressed: () async {
+                var newState = await FlutterVpn.charonErrorState;
+                setState(() => charonState = newState);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+*/
