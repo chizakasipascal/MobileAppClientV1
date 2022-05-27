@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../screens/espaceRevendeur/transfertCarte.dart';
+import '../../screens/espaceClient/transfertCarte.dart';
 import '../widgets.dart';
 
 class TransferAndConfirmtButtom extends StatelessWidget {

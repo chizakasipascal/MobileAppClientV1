@@ -5,8 +5,8 @@ import 'package:mobileappclientv1/src/const/assets.dart';
 import 'package:mobileappclientv1/src/utils/utils.dart';
 import 'package:mobileappclientv1/src/views/widgets/widgets.dart';
 
-class EspaceRevendeur extends StatefulWidget {
-  EspaceRevendeur(
+class EspaceClient extends StatefulWidget {
+  EspaceClient(
       {Key? key,
       this.carteEmpty = true,
       this.carteNotSelect = false,
@@ -18,10 +18,10 @@ class EspaceRevendeur extends StatefulWidget {
   bool carteSelect;
 
   @override
-  State<EspaceRevendeur> createState() => _EspaceRevendeurState();
+  State<EspaceClient> createState() => _EspaceClientState();
 }
 
-class _EspaceRevendeurState extends State<EspaceRevendeur> {
+class _EspaceClientState extends State<EspaceClient> {
   late PageController _pageController;
   double pageOffeset = 0;
   double viewportFraction = 0.8;

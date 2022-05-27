@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mobileappclientv1/src/const/assets.dart';
+import 'package:mobileappclientv1/src/const/routes.dart';
+import 'package:mobileappclientv1/src/utils/utils.dart';
 import 'package:mobileappclientv1/src/views/widgets/widgets.dart';
 
-import '../../const/assets.dart';
-import '../../const/routes.dart';
-import '../../utils/utils.dart';
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+class Register extends StatelessWidget {
+  Register({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> _keyForm = GlobalKey();
   final GlobalKey<State> _keyLoader =
-      GlobalKey<State>(debugLabel: "loading  user");
+      GlobalKey<State>(debugLabel: "register  user");
 
   final TextEditingController _telephone = TextEditingController();
   final TextEditingController _password = TextEditingController();
@@ -94,10 +92,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 10),
               ConnectisRedButtom(
                 onPressed: () {
-                  onPressed:
-                  () {
-                    Navigator.pushNamed(context, Routes.register);
-                  };
+                  debugPrint("S'inscrire");
                 },
                 colortextStyle: kConnectis,
                 descriprion: "S'inscrire",

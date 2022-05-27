@@ -1,4 +1,4 @@
 export 'loginScreen.dart';
-export 'espaceRevendeur/espaceRevendeur.dart';
+export 'register.dart';
 export 'page.dart';
 export '../screens/serviceClient/serviceClient.dart';
