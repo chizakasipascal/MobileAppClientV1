@@ -44,7 +44,11 @@ class TicketsOuvert extends StatelessWidget {
                           child: Image.asset(Assets.run),
                         ),
                         const SizedBox(height: 3),
-                        Text('#21821', style: themeData.textTheme.bodyText2),
+                        Text(
+                          '#21821',
+                          style: themeData.textTheme.bodyText2!
+                              .copyWith(fontSize: 14),
+                        ),
                       ],
                     ),
                     const Spacer(),
@@ -53,8 +57,7 @@ class TicketsOuvert extends StatelessWidget {
                         Text(
                           'Ticket ouvert',
                           style: themeData.textTheme.bodyText2!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                              fontWeight: FontWeight.bold, fontSize: 18.0),
                         ),
                       ],
                     ),
@@ -68,7 +71,7 @@ class TicketsOuvert extends StatelessWidget {
                           children: [
                             Container(
                               constraints: const BoxConstraints(
-                                  minHeight: 20, minWidth: 20),
+                                  minHeight: 17, minWidth: 17),
                               decoration: const BoxDecoration(
                                 color: kConnectis,
                                 shape: BoxShape.circle,
@@ -77,16 +80,24 @@ class TicketsOuvert extends StatelessWidget {
                                 child: Text(
                                   '7',
                                   style: themeData.textTheme.bodyText2!
-                                      .copyWith(color: kWhiteColor),
+                                      .copyWith(
+                                          color: kWhiteColor, fontSize: 12),
                                 ),
                               ),
                             ),
                             const SizedBox(width: 10),
-                            Text('15:33', style: themeData.textTheme.bodyText2),
+                            Text(
+                              '15:33',
+                              style: themeData.textTheme.bodyText2!
+                                  .copyWith(fontSize: 14),
+                            ),
                           ],
                         ),
-                        Text('12 Fév. 2020',
-                            style: themeData.textTheme.bodyText2),
+                        Text(
+                          '12 Fév. 2020',
+                          style: themeData.textTheme.bodyText2!
+                              .copyWith(fontSize: 14),
+                        ),
                       ],
                     )
                   ],
