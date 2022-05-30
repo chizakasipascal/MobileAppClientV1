@@ -33,189 +33,196 @@ class _RegisterState extends State<Register> {
     return Stack(
       children: [
         BuildBackground(
-          viewLogo: !isKeyboard ? false : false,
+          viewLogo: !isKeyboard ? true : false,
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                TextFieldCustomer(
-                  label: "Prénom *",
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                TextFieldCustomer(
-                  label: "Nom *",
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                TextFieldCustomer(
-                  label: "Téléphone *",
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                TextFieldCustomer(
-                  label: "Email",
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                TextFieldCustomer(
-                  label: "30/09/1932",
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 50.0, top: 5),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Sexe",
-                          style: themeData.textTheme.bodyText2!
-                              .copyWith(fontSize: 12),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "M",
-                              style: themeData.textTheme.bodyText2!
-                                  .copyWith(fontSize: 16),
-                            ),
-                            Checkbox(
-                              fillColor:
-                                  MaterialStateProperty.all(Colors.transparent),
-                              side:
-                                  MaterialStateBorderSide.resolveWith((states) {
-                                if (states.contains(MaterialState.pressed)) {
-                                  return const BorderSide(color: kConnectis);
-                                } else {
-                                  return const BorderSide(color: kGreyColor);
-                                }
-                              }),
-                              checkColor: kConnectis,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                              value: m,
-                              onChanged: (val) {
-                                setState(() {
-                                  m = true;
-                                  f = false;
-                                });
-                              },
-                            ),
-                            Text(
-                              "F",
-                              style: themeData.textTheme.bodyText2!
-                                  .copyWith(fontSize: 16),
-                            ),
-                            Checkbox(
-                              fillColor:
-                                  MaterialStateProperty.all(Colors.transparent),
-                              side:
-                                  MaterialStateBorderSide.resolveWith((states) {
-                                if (states.contains(MaterialState.pressed)) {
-                                  return const BorderSide(color: kConnectis);
-                                } else {
-                                  return const BorderSide(color: kGreyColor);
-                                }
-                              }),
-                              checkColor: kConnectis,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                              value: f,
-                              onChanged: (val) {
-                                setState(() {
-                                  f = true;
-                                  m = false;
-                                });
-                              },
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                LineWithCircleRoundConer(isEmptyOne: true, size: size),
-                TextFieldCustomer(
-                  label: "Mot de passe *",
-                  isPassword: true,
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                TextFieldCustomer(
-                  label: "Confirmation du mot de passe *",
-                  isPassword: true,
-                  textAlign: TextAlign.left,
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(
-                        top: 20.0, left: 20.0, right: 15.0, bottom: 0),
-                    child: SizedBox(
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                ConnectisRedButtom(
-                  onPressed: () {
-                    Navigator.pushNamed(context, Routes.page);
-                  },
-                  descriprion: "Se Connecter",
-                  style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                        foregroundColor: MaterialStateProperty.all(kWhiteColor),
-                        overlayColor: MaterialStateProperty.all(
-                          kGreyColor.withOpacity(.5),
-                        ),
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: !isKeyboard ? size.height / 5 : 0,
+              ),
+              child: Column(
+                children: [
+                  TextFieldCustomer(
+                    label: "Prénom *",
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
                       ),
-                ),
-              ],
+                    ),
+                  ),
+                  TextFieldCustomer(
+                    label: "Nom *",
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
+                      ),
+                    ),
+                  ),
+                  TextFieldCustomer(
+                    label: "Téléphone *",
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
+                      ),
+                    ),
+                  ),
+                  TextFieldCustomer(
+                    label: "Email",
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
+                      ),
+                    ),
+                  ),
+                  TextFieldCustomer(
+                    label: "30/09/1932",
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 50.0, top: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Sexe",
+                            style: themeData.textTheme.bodyText2!
+                                .copyWith(fontSize: 12),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "M",
+                                style: themeData.textTheme.bodyText2!
+                                    .copyWith(fontSize: 16),
+                              ),
+                              Checkbox(
+                                fillColor: MaterialStateProperty.all(
+                                    Colors.transparent),
+                                side: MaterialStateBorderSide.resolveWith(
+                                    (states) {
+                                  if (states.contains(MaterialState.pressed)) {
+                                    return const BorderSide(color: kConnectis);
+                                  } else {
+                                    return const BorderSide(color: kGreyColor);
+                                  }
+                                }),
+                                checkColor: kConnectis,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5)),
+                                value: m,
+                                onChanged: (val) {
+                                  setState(() {
+                                    m = true;
+                                    f = false;
+                                  });
+                                },
+                              ),
+                              Text(
+                                "F",
+                                style: themeData.textTheme.bodyText2!
+                                    .copyWith(fontSize: 16),
+                              ),
+                              Checkbox(
+                                fillColor: MaterialStateProperty.all(
+                                    Colors.transparent),
+                                side: MaterialStateBorderSide.resolveWith(
+                                    (states) {
+                                  if (states.contains(MaterialState.pressed)) {
+                                    return const BorderSide(color: kConnectis);
+                                  } else {
+                                    return const BorderSide(color: kGreyColor);
+                                  }
+                                }),
+                                checkColor: kConnectis,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5)),
+                                value: f,
+                                onChanged: (val) {
+                                  setState(() {
+                                    f = true;
+                                    m = false;
+                                  });
+                                },
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  LineWithCircleRoundConer(isEmptyOne: true, size: size),
+                  TextFieldCustomer(
+                    label: "Mot de passe *",
+                    isPassword: true,
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
+                      ),
+                    ),
+                  ),
+                  TextFieldCustomer(
+                    label: "Confirmation du mot de passe *",
+                    isPassword: true,
+                    textAlign: TextAlign.left,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.0, left: 20.0, right: 15.0, bottom: 0),
+                      child: SizedBox(
+                        height: 10,
+                        width: 10,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ConnectisRedButtom(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.page);
+                    },
+                    descriprion: "Se Connecter",
+                    style:
+                        Theme.of(context).elevatedButtonTheme.style!.copyWith(
+                              foregroundColor:
+                                  MaterialStateProperty.all(kWhiteColor),
+                              overlayColor: MaterialStateProperty.all(
+                                kGreyColor.withOpacity(.5),
+                              ),
+                            ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
