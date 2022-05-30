@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobileappclientv1/src/const/app_theme.dart';
 import 'package:mobileappclientv1/src/const/assets.dart';
+import 'package:mobileappclientv1/src/utils/colors.dart';
 import 'package:mobileappclientv1/src/views/widgets/widgets.dart';
 
 class EspaceClient extends StatefulWidget {
@@ -84,7 +85,7 @@ class _EspaceClientState extends State<EspaceClient> {
                         widget: true,
                         headLabel: 'Bonjour ',
                         labelname: 'Claude',
-                        subLabel: 'Vous êtes sur le point de transférer des '),
+                        subLabel: 'Bienvenu dans votre '),
                 const SizedBox(height: 10),
                 widget.carteEmpty
                     ? Text("Utilisation", style: themeData.textTheme.bodyText2)
@@ -99,11 +100,59 @@ class _EspaceClientState extends State<EspaceClient> {
                 const SizedBox(height: 10),
                 widget.carteEmpty
                     ? CarteConnectisEmpty(size: size)
-                    : SizedBox(
-                        height: 200,
-                        child: Row(
-                          children: const [],
-                        )),
+                    : Padding(
+                        padding: const EdgeInsets.only(right: 30.0),
+                        child: SizedBox(
+                          height: 100,
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 100,
+                                width: 100,
+                                decoration: const BoxDecoration(
+                                    color: kConnectis, shape: BoxShape.circle),
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  margin: const EdgeInsets.all(20),
+                                  decoration: const BoxDecoration(
+                                      color: kGreyColorOpacity,
+                                      shape: BoxShape.circle),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              Text.rich(
+                                TextSpan(
+                                  style: themeData.textTheme.bodyText2,
+                                  children: [
+                                    const TextSpan(
+                                      text: "Vous n’avez aucune ",
+                                    ),
+                                    TextSpan(
+                                      text: "\nTemps restant ",
+                                      style: themeData.textTheme.bodyText2!
+                                          .copyWith(fontSize: 12),
+                                    ),
+                                    TextSpan(
+                                      text: "\n07:54:56",
+                                      style: themeData.textTheme.bodyText2!
+                                          .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                              color: kConnectis),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const Spacer(),
+                              const Icon(
+                                Icons.add_circle_outline,
+                                color: kGreyColor,
+                                size: 25,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                 const SizedBox(height: 10),
                 LineWithCircleRoundConer(
                   isEmptyOne: true,

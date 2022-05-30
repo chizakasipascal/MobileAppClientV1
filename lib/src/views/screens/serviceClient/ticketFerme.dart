@@ -48,10 +48,13 @@ class TicketFerme extends StatelessWidget {
                         Text(
                           'Ticket ouvert',
                           style: themeData.textTheme.bodyText2!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
-                        Text('#21821', style: themeData.textTheme.bodyText2),
+                        Text(
+                          '#21821',
+                          style: themeData.textTheme.bodyText2!
+                              .copyWith(fontSize: 14),
+                        ),
                       ],
                     ),
                     const Spacer(),
@@ -59,9 +62,16 @@ class TicketFerme extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('15:33', style: themeData.textTheme.bodyText2),
-                        Text('12 Fév. 2020',
-                            style: themeData.textTheme.bodyText2),
+                        Text(
+                          '15:33',
+                          style: themeData.textTheme.bodyText2!
+                              .copyWith(fontSize: 14),
+                        ),
+                        Text(
+                          '12 Fév. 2020',
+                          style: themeData.textTheme.bodyText2!
+                              .copyWith(fontSize: 14),
+                        ),
                       ],
                     )
                   ],
