@@ -134,11 +134,13 @@ class _RegisterState extends State<Register> {
                               checkColor: kConnectis,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              // value: snapshot.tapval,
+                              value: m,
                               onChanged: (val) {
-                                //   snapshot.changval = val!;
+                                setState(() {
+                                  m = true;
+                                  f = false;
+                                });
                               },
-                              value: true,
                             ),
                             Text(
                               "F",
@@ -159,11 +161,13 @@ class _RegisterState extends State<Register> {
                               checkColor: kConnectis,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              // value: snapshot.tapval,
+                              value: f,
                               onChanged: (val) {
-                                //   snapshot.changval = val!;
+                                setState(() {
+                                  f = true;
+                                  m = false;
+                                });
                               },
-                              value: true,
                             ),
                           ],
                         )
