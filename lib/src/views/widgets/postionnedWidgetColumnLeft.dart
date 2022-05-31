@@ -9,20 +9,17 @@ class PostionnedWidgetColumnLeft extends StatelessWidget {
     required this.appname,
     required this.size,
     required this.widget,
-    required this.labelname,
-    required this.headLabel,
-    required this.subLabel,
-    this.carte = "Carte",
-    this.name = "Tchukudu",
+    required this.nameUser,
+    required this.greetinglabel,
+    required this.message,
   }) : super(key: key);
 
   final String appname;
   final Size size;
   final bool widget;
-  final String labelname;
-  final String headLabel;
-  final String subLabel;
-  final String carte, name;
+  final String nameUser;
+  final String greetinglabel;
+  final String message;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +29,8 @@ class PostionnedWidgetColumnLeft extends StatelessWidget {
       children: [
         Text(
           appname,
-          style: themeData.textTheme.bodyText2!.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
+          style: themeData.textTheme.bodyText2!
+              .copyWith(fontWeight: FontWeight.bold, fontSize: 15),
         ),
         const SizedBox(height: 5),
         LineWithCircleRoundConer(
@@ -62,7 +58,7 @@ class PostionnedWidgetColumnLeft extends StatelessWidget {
                             size: 80,
                           )
                         : Text(
-                            labelname.substring(0, 1).toUpperCase(),
+                            nameUser.substring(0, 1).toUpperCase(),
                             style: themeData.textTheme.bodyLarge!.copyWith(
                               color: kWhiteColor,
                               fontWeight: FontWeight.bold,
@@ -85,26 +81,18 @@ class PostionnedWidgetColumnLeft extends StatelessWidget {
                   ),
                   children: [
                     TextSpan(
-                      text: headLabel,
+                      text: greetinglabel,
                     ),
                     TextSpan(
-                      text: labelname.substring(0, 1).toUpperCase() +
-                          labelname.substring(1).toLowerCase() +
+                      text: nameUser.substring(0, 1).toUpperCase() +
+                          nameUser.substring(1).toLowerCase() +
                           '.',
                       style: themeData.textTheme.bodyText2!
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                     TextSpan(
-                      text: "\n$subLabel",
+                      text: "\n$message",
                     ),
-                    TextSpan(
-                      text: carte,
-                      style: themeData.textTheme.bodyText2!.copyWith(
-                          fontWeight: FontWeight.bold, color: kConnectis),
-                    ),
-                    TextSpan(
-                      text: " $name.",
-                    )
                   ],
                 ),
               ),

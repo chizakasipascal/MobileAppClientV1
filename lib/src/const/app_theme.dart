@@ -5,7 +5,7 @@ import 'package:mobileappclientv1/src/utils/utils.dart';
 final ThemeData themeData = ThemeData(
   fontFamily: FontFamily.chevin,
   textTheme: const TextTheme(
-    bodyText2: TextStyle(color: kGreyColor, fontSize: 16),
+    bodyText2: TextStyle(color: kGreyColor),
     // bodyLarge: const TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
   ),
   scaffoldBackgroundColor: Colors.transparent,
