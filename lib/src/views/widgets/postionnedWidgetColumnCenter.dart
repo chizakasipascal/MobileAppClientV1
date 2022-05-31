@@ -81,21 +81,13 @@ class PostionnedWidgetColumnCenter extends StatelessWidget {
               TextSpan(
                 text: nameUser.substring(0, 1).toUpperCase() +
                     nameUser.substring(1).toLowerCase() +
-                    ',',
+                    ',\n',
                 style: themeData.textTheme.bodyText2!
                     .copyWith(fontWeight: FontWeight.bold, color: kGreyColor),
               ),
               TextSpan(
-                text: message + '\n',
+                text: message,
               ),
-              TextSpan(
-                text: appname.substring(0, 1).toUpperCase() +
-                    appname.substring(1).toLowerCase(),
-                style: themeData.textTheme.bodyText2!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: kGreyColor,
-                    fontSize: 15),
-              )
             ],
           ),
         ),
