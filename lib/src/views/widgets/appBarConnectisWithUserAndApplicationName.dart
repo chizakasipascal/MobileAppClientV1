@@ -26,17 +26,17 @@ class AppBarConnectisWithUserAndApplicationName extends StatelessWidget {
             appname: appname,
             size: size,
             widget: avatarProfil,
-            labelname: labelname,
-            headLabel: headLabel,
-            subLabel: "Vous êtes sur le point de transférer des\n",
+            nameUser: labelname,
+            greetinglabel: headLabel,
+            message: "Vous êtes sur le point de transférer des\n",
           )
         : PostionnedWidgetColumnCenter(
             appname: appname,
             size: size,
             widget: avatarProfil,
-            labelname: labelname,
-            headLabel: headLabel,
-            subLabel: subLabel,
+            nameUser: labelname,
+            greetinglabel: headLabel,
+            message: subLabel,
           );
   }
 }

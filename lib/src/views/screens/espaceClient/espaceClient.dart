@@ -8,7 +8,7 @@ class EspaceClient extends StatefulWidget {
   EspaceClient(
       {Key? key,
       this.carteEmpty = false,
-      this.carteNotSelect = false,
+      this.carteNotSelect = true,
       this.carteSelect = false})
       : super(key: key);
 
@@ -76,16 +76,16 @@ class _EspaceClientState extends State<EspaceClient> {
                         appname: "Espace Client",
                         size: size,
                         widget: true,
-                        headLabel: 'Bonjour ',
-                        labelname: 'Claude',
-                        subLabel: 'Bienvenu dans votre ')
+                        greetinglabel: 'Bonjour ',
+                        nameUser: 'Claude',
+                        message: 'Bienvenu dans votre espace Client')
                     : PostionnedWidgetColumnLeft(
                         appname: "Espace Client",
                         size: size,
                         widget: true,
-                        headLabel: 'Bonjour ',
-                        labelname: 'Claude',
-                        subLabel: 'Bienvenu dans votre '),
+                        greetinglabel: 'Bonjour ',
+                        nameUser: 'Claude',
+                        message: 'Bienvenu dans votre espace Client'),
                 const SizedBox(height: 10),
                 widget.carteEmpty
                     ? Text("Utilisation", style: themeData.textTheme.bodyText2)

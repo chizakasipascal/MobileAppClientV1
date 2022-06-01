@@ -9,17 +9,17 @@ class PostionnedWidgetColumnCenter extends StatelessWidget {
     required this.appname,
     required this.size,
     required this.widget,
-    required this.labelname,
-    required this.headLabel,
-    required this.subLabel,
+    required this.nameUser,
+    required this.greetinglabel,
+    required this.message,
   }) : super(key: key);
 
   final String appname;
   final Size size;
   final bool widget;
-  final String labelname;
-  final String headLabel;
-  final String subLabel;
+  final String nameUser;
+  final String greetinglabel;
+  final String message;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class PostionnedWidgetColumnCenter extends StatelessWidget {
                         size: 70,
                       )
                     : Text(
-                        labelname.substring(0, 1).toUpperCase(),
+                        nameUser.substring(0, 1).toUpperCase(),
                         style: themeData.textTheme.bodyLarge!.copyWith(
                           color: kWhiteColor,
                           fontWeight: FontWeight.bold,
@@ -76,26 +76,18 @@ class PostionnedWidgetColumnCenter extends StatelessWidget {
                 themeData.textTheme.headlineLarge!.copyWith(color: kGreyColor),
             children: [
               TextSpan(
-                text: headLabel,
+                text: greetinglabel,
               ),
               TextSpan(
-                text: labelname.substring(0, 1).toUpperCase() +
-                    labelname.substring(1).toLowerCase() +
-                    ',',
+                text: nameUser.substring(0, 1).toUpperCase() +
+                    nameUser.substring(1).toLowerCase() +
+                    ',\n',
                 style: themeData.textTheme.bodyText2!
                     .copyWith(fontWeight: FontWeight.bold, color: kGreyColor),
               ),
               TextSpan(
-                text: subLabel + '\n',
+                text: message,
               ),
-              TextSpan(
-                text: appname.substring(0, 1).toUpperCase() +
-                    appname.substring(1).toLowerCase(),
-                style: themeData.textTheme.bodyText2!.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: kGreyColor,
-                ),
-              )
             ],
           ),
         ),
